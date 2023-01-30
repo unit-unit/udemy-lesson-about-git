@@ -23,7 +23,7 @@ console.log(personalMovieDB);
 
 function rememberMyFilms(){ 
     for (let i = 0; i < 2; i++) {
-    const a = prompt('Какой последний фильм вы посмотрели?'),
+    const a = prompt('Какой последний фильм вы посмотрели?').trim(),
           b = prompt('Какой рейтинг вы поставите ему?');
 
     if (a != null && b != null && a != '' && b != '' ** a.length < 50){ 
