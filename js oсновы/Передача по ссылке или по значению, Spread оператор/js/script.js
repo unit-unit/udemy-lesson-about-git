@@ -18,7 +18,7 @@ console.log(copy);
 console.log(obj);
 
 
-// копия(поверхсностная ) 1й СПОСОБобьекта массива 
+// копия(поверхсностная ) 1й СПОСОБ обьекта  
 function copyOne(mainObj){
     let objCopy = {};
 
@@ -37,11 +37,13 @@ const numbers = {
 
 };
 
-const newNumbers = copyOne(numbers);
+const newNumbers = copyOne(numbers); //сделали клонирование обьекта, НО обьекты или массивы внутри остаются ссылками
+                                                //(то есть, если менять что то внутри них будет меняться и родитель)
 newNumbers.a = 10;
-newNumbers.c.x = 4;
+newNumbers.c.x = 4; 
 console.log(numbers);
-console.log(newNumbers);
+console.log(newNumbers);// видим что а изменилось только в новом, но изменение во
+                        // вложенном обьекте повлияли на родиля(потому что это поверхсностная копия)
 
 // 2й СПОСОБ object assign
 //метод Object позволяет соединить несколько обьектов
@@ -73,7 +75,7 @@ const video = ['youtube', 'vimeo', 'twitch'];
 const socialMedia = ['facebook', 'instagram', 'beReal'];
 const internet = [...video, ...socialMedia, 'apex', 'chrome'];
 console.log(internet);
-
+//создаем функцию которая будет при помощи спред оператора разкладывать массив
 function log(a, b, c) {
     console.log(a);
     console.log(b);
@@ -83,10 +85,13 @@ function log(a, b, c) {
 const someNum = [55, 1, 99];
 log(...someNum); // чтобы разложить массив на отдельные элементы
 
+
+//клонируем при помощие spread
 const array = ['a', 'tttt'];
-const newArray = [...array];
+const newArray = [...array];// клонируем при помощи спред оператора
 console.log(newArray);
 
+//клонируем object при помощи spread
 const q = {
     one: 1,
     two: 2

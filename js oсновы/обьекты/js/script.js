@@ -14,13 +14,13 @@ const options = {
 };
 options.makeTest();
 
-const {border, bg} = options.colors;
-console.log(border);
+const {border, bg} = options.colors; //деструктуризация, вытащили с обьектра значения
+console.log(border); // смотрим свойство которое вытащили, но только одно. Еще может глянуть bg
 // console.log(options.colors.border); - достучаться через ключ  к значению
 // delete options.colors.border; - удалить ключ и значение
 ////OBJECT KEYS
-// console.log(Object.keys(options)); // получаем массив с ключами
-// console.log(Object.keys(options).length);// получаем колличество ключей
+// console.log(Object.keys(options)); // получаем [массив] со всеми ключами obj options
+// console.log(Object.keys(options).length);// получаем колличество ключей в  obj options
 
 
 // Перебрать все свойства(ключи и значение) внутри обьекта 
@@ -45,3 +45,6 @@ for (let k in adress){
     // console.log(adress[k]);  -------- получаем значение 
     console.log(`my ${k} is ${adress[k]}`);
 }
+
+console.log(Object.keys(adress));
+console.log(Object.keys(adress).length);

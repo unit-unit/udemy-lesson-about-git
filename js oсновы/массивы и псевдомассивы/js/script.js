@@ -1,37 +1,32 @@
-// ОБЬЕКТЫ И ДЕСТРУКТУРИЗАЦИЯ ОБЬЕКТОВ ЕS6
+const arr  = [1, 2, 3, 4, 5];
+arr.pop(); // удалить последний
+console.log(arr);
+arr.push(10);
+console.log(arr); // добавить в конец элемент
 
-const options = {
-    name : 'test',
-    width: 1024,
-    height: 1024,
-    colors: {
-        border: 'black',
-        bg: 'red'
-    },
-    makeTest: function(){
-        console.log('test');
-    }
-};
-options.makeTest();
 
-const {border, bg} = options.colors;
-console.log(border);
-// console.log(options.colors.border);
+//перебор массива
 
-// delete options.colors.border;
-// console.log(options);
-// let counter = 0;
-// for (let key in options){
-//     if (typeof(options[key]) === 'object'){
-//         for (let i in options[key]){
-//             console.log(`свойство ${i} имеет значение ${options[key][i]}`);
-//         }
-//     } else {
-//     console.log(`свойство ${key} имеет значение ${options[key]}`);
-//     }
-// }
-// console.log(counter);
+//1й пример
+for (let i = 0; i < arr.length; i++){
+    console.log(arr[i]);
+}
 
-////OBJECT KEYS
-console.log(Object.keys(options)); // получаем массив с ключами
-console.log(Object.keys(options).length);// получаем колличество ключей
+// 2й пример
+// плюс этого метода что можно использовать break и continue 
+for (let key of arr){
+    console.log(key);
+}
+
+//3й пример forEach - этот метод позволяет гибко 
+//перебрать все элементы внутри массива
+//можно  подробно настроить в отличии от 2х первых способов
+arr.forEach(function(item, i, arr){
+    console.log(`${i}: ${item} внутри массива ${arr}`);
+});
+
+//еще есть методы перебора (перебор транформация)
+// map   -  переберает как forEach, но модифицируя массив(вернет новый массив, который будет отличаться от старого)
+// reduce
+// evert/some 
+// filter - офильтровываем массив, например: оставить четные числа или элементы которые строка
